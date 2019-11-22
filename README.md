@@ -6,3 +6,11 @@ Jeder kann Dateien über https://github.com/flowluap/uni-trier.rocks einstellen.
 ## Im Moment Vertretene Fächer:
 - [x] Informatik Bachelor of Sience
 
+## Features
+
+- [ ] Mesa API
+- [ ] Campuspläne
+- [ ] SHortcuts
+- [ ] Veranstaltungen
+
+

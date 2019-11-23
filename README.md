@@ -1,6 +1,6 @@
 # Hier ist das Dokumenten root Verzeichnis:
 Außerdem ist es eine Git Branch, in der alle Dateien hochgeladen werden.
-
+Der Mirror: https://github.com/flowluap/uni-trier.rocks/tree/files
 ## Im Moment Vertretene Fächer:
 * [x] Informatik Bachelor of Sience
 - AUSZEICHNUNGSSPRACHEN -BA4INF2051

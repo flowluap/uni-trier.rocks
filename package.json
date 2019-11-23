@@ -1,0 +1,26 @@
+{
+  "name": "uni-trier.rocks",
+  "version": "1.0.0",
+  "description": "Uni Trier reload",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowluap/uni-trier.rocks.git"
+  },
+  "author": "PW",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flowluap/uni-trier.rocks/issues"
+  },
+  "homepage": "https://github.com/flowluap/uni-trier.rocks#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2"
+  }
+}

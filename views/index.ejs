@@ -7,155 +7,125 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" href="/public/img/logo.png">
+    <title>Uni Trier Rocks - yeah</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153102749-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <title>Hello, world!</title>
+  gtag('config', 'UA-153102749-1');
+</script>
+
     <style>
-      /*
- * Globals
- */
-
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
-}
-
-
-/*
- * Base structure
- */
 
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #0080FF;
 }
 
-body {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  color: #fff;
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+.box-container{
+  background-color:white;
+  margin-top: 5vh;
+  padding: 20px;
+  border: 2px;
+  border-radius: 5px;
 }
 
-.cover-container {
-  max-width: 42em;
+.fas{
+  color:grey;
 }
 
-
-/*
- * Header
- */
-.masthead {
-  margin-bottom: 2rem;
-}
-
-.masthead-brand {
-  margin-bottom: 0;
-}
-
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
-  color: rgba(255, 255, 255, .5);
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
-}
-
-
-/*
- * Cover
- */
-.cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: 700;
-}
-
-
-/*
- * Footer
- */
-.mastfoot {
-  color: rgba(255, 255, 255, .5);
-}
 
     </style>
   </head>
-  <body class="text-center">
+  <body>
 
-   <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-     <header class="masthead mb-auto">
-       <div class="inner">
-         <h3 class="masthead-brand">uni-trier.rocks</h3>
-         <nav class="nav nav-masthead justify-content-center">
-           <a class="nav-link active" href="#">Home</a>
-           <a class="nav-link" href="#">Features</a>
-           <a class="nav-link" href="#">Contact</a>
-         </nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img height="50px" src="/public/img/logo.png" alt="logo.png" style="margin-left:20vw;"></img></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto" style="margin-right:20vw;">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dateien">Dateien</a>
+      </li>
+
+
+  </div>
+</nav>
+
+
+     <div class="container box-container">
+       <div class="row">
+         <h1 class="col-xl-4 col-md-6 text-right">Weiterleitungen</h1>
        </div>
-     </header>
+       <div class="row">
+                <p class="col-2"></p>
+                <p class ="col-xl-4 col-md-6"><a href="https://p.uni-trier.rocks"> p.uni-trier.rocks </a><i class="fas fa-forward"></i>
+                  <a href="https://porta-system.uni-trier.de">porta-system.uni-trier.de</a><p>
+        </div>
+        <div class="row">
+          <p class="col-2"></p>
+                 <p class ="col-xl-4 col-md-6"><a href="https://s.uni-trier.rocks"> s.uni-trier.rocks </a><i class="fas fa-forward"></i>
+                   <a href="https://studip.uni-trier.de">studip.uni-trier.de</a><p>
+         </div>
+         <div class="row">
+                  <p class="col-2"></p>
+                  <p class ="col-xl-4 col-md-6"><a href="https://m.uni-trier.rocks"> m.uni-trier.rocks </a><i class="fas fa-forward"></i>
+                    <a href="https://moodle.uni-trier.de">moodle.uni-trier.de</a><p>
+          </div>
+          <div class="row">
+            <p class="col-2"></p>
+                   <p class ="col-xl-4 col-md-6"><a href="https://o.uni-trier.rocks"> o.uni-trier.rocks </a><i class="fas fa-forward"></i>
+                     <a href="https://owa.uni-trier.de">owa.uni-trier.de</a><p>
+           </div>
+     </div>
 
-     <main role="main" class="inner cover">
-       <h1 class="cover-heading">Cover your page.</h1>
-       <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-       <p class="lead">
-         <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-       </p>
-     </main>
+     <div class="container box-container">
+    <% for(i in events){ %>
 
-     <footer class="mastfoot mt-auto">
-       <div class="inner">
-         <p><a>Impressum</a></p>
+ 		<div class="row">
+ 			<div class="col-2 text-right">
+ 				<h1 class="display-4"><span class="badge badge-<%= (events[i].event.prio=='low' ? 'secondary' : 'danger') %>"><%= events[i].date %></span></h1>
+ 				<h2><%= events[i].month %></h2>
+ 			</div>
+ 			<div class="col-10">
+ 				<h3 class="text-uppercase"><strong><%= events[i].event.task %></strong></h3>
+ 				<ul class="list-inline">
+ 				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <%= events[i].day %></li>
+
+ 					<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Uni</li>
+ 				</ul>
+ 				<p><%= events[i].event.note %></p>
+ 			</div>
+ 		</div>
+    <% } %>
+ 	</div>
+
+     <footer class="align-center">
+       <div class="text-center">
+         <p><a href="/impressum" class="text-white">Impressum</a></p>
+         <p class="m-0 text-center text-white">Erstellt mit <a style="color:red; !important">❤️</a> durch <a class="text-white" href="https://flowluap.com">flowluap</a></p>
        </div>
      </footer>
-   </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
   </body>
 </html>

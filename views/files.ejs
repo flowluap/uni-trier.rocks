@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" href="/public/img/logo.png">
+    <title>Uni Trier Rocks - yeah: Dateien</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153102749-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153102749-1');
+</script>
+
+    <style>
+
+html,
+body {
+  height: 100%;
+  background-color: #0080FF;
+}
+
+.badge-count{
+   height:17px;
+   max-width: 23px;
+   background:red;
+   position:relative;
+   top: 23px;
+   left: -35px;
+  }
+
+.file-container{
+  margin-top: 10vh;
+  max-height: 60vh;
+  overflow-y:scroll;
+}
+
+.file-row{
+  background-color: #F0F0F0;
+  margin:3px 0 3px 3px;
+  border: 2px;
+  border-radius: 5px;
+}
+
+.file-row a:link{
+  text-decoration: none;
+}
+
+.modal-dialog {
+  width: 98%;
+  height: 92%;
+
+}
+
+.modal-content {
+  height: 99%;
+}
+
+embed{
+  height:80vh;
+  width:99%;
+}
+
+
+    </style>
+  </head>
+  <body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/"><img height="50px" src="/public/img/logo.png" alt="logo.png" style="margin-left:20vw;"></img></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto" style="margin-right:20vw;">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/dateien">Dateien</a>
+      </li>
+
+
+  </div>
+</nav>
+<div class="file-container container">
+  <nav aria-label="breadcrumb">
+         <ol class="breadcrumb">
+           <li class="breadcrumb-item"><a>></a></li>
+           <% for (i in path.split("/")){%>
+           <% if (i != 0){ %>
+           <li class="breadcrumb-item"><a><%= path.split("/")[i] %></a></li>
+           <% }%>
+           <% }%>
+         </ol>
+       </nav>
+</div>
+
+       <div class="container card">
+         <div class="row file-row">
+                  <a class="col-md-1" href="/dateien?path=/<%= pathback %>"><i class="fas fa-folder fa-2x mx-3"></i></a>
+                  <i class="col fas fa-backward my-auto"></i>
+                </div>
+         <% for(i in folders) {%>
+
+           <div class="row file-row">
+             <a class="col-md-1" href="/dateien?path=<%= folders[i].path.replace(process.env.FILE_DIR,"") %>"><i class="fas fa-folder fa-2x mx-3"></i></a>
+             <span class="col badge badge-count badge-danger"><%= folders[i].content.length %></span>
+             <a class="col my-auto folder-name" href="/dateien?path=<%= folders[i].path.replace(process.env.FILE_DIR,"") %>"><%= folders[i].name %></a>
+           </div>
+        <% } %>
+
+        <% for(i in files) {%>
+          <% if(files[i].name == "README.md"){ %>
+            <script>
+            fetch("/files<%= files[i].path.replace(process.env.FILE_DIR,"") %>")
+            .then(response => response.text())
+            .then((data) => {
+              var text = data,
+                  target = document.getElementById('targetDiv'),
+                  converter = new showdown.Converter({tasklists: true, simplifiedAutoLink:true}),
+                  html = converter.makeHtml(text);
+                target.innerHTML = html;
+            })
+
+            </script>
+          <% }else{ %>
+            <% if(files[i].name.split(".")[files[i].name.split(".").length-1] == "pdf"){ %>
+
+
+              <div class="row file-row">
+                <a download="<%=  files[i].name %>" class="col-md-1" href="/files<%= files[i].path.replace(process.env.FILE_DIR,"") %>"><i class="<%= files[i].icon %> fa-2x mx-3"></i></a>
+                <a download="<%=  files[i].name %>" class="col-xl-10 my-auto folder-name" href="/files<%= files[i].path.replace(process.env.FILE_DIR,"") %>"><%= files[i].name %></a>
+                <a class="col-sm-1 my-auto" href="#" type="button" data-toggle="modal" data-target="#myModal<%= i %>"><i class="fas fa-eye"></i></a>
+              </div>
+
+              <div class="modal fade" id="myModal<%= i %>" tabindex="-1" role="dialog"aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+
+                  <div class="modal-body">
+                      <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://uni-trier.rocks/files<%= files[i].path.replace(process.env.FILE_DIR,"") %>" width="500" height="375">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <% }else{ %>
+              <div class="row file-row">
+                <a download="<%=  files[i].name %>" class="col-md-1" href="/files<%= files[i].path.replace(process.env.FILE_DIR,"") %>"><i class="<%= files[i].icon %> fa-2x mx-3"></i></a>
+                <a download="<%=  files[i].name %>" class="col-xl-11 my-auto folder-name" href="/files<%= files[i].path.replace(process.env.FILE_DIR,"") %>"><%= files[i].name %></a>
+              </div>
+            <% } %>
+          <% } %>
+        <% } %>
+       </div>
+
+       <% for(var i=0; i < files.length ; i++) {%>
+         <% if(files[i].name == "README.md"){ %>
+           <div class="container card" style="margin-top:10px;">
+             <div id="targetDiv" style="margin-top:20px;"></div>
+           </div>
+          <% } %>
+       <% } %>
+
+
+
+
+     <footer class="align-center fixed-bottom" >
+       <div class="text-center">
+         <p><a href="/impressum" class="text-white">Impressum</a></p>
+         <p class="m-0 text-center text-white">Erstellt mit <a style="color:red; !important">❤️</a> durch <a class="text-white" href="https://flowluap.com">flowluap</a></p>
+       </div>
+     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+  </body>
+</html>

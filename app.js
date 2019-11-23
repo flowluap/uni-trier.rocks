@@ -1,26 +1,29 @@
-var express = require('express'),
+const express = require('express'),
 bodyParser = require('body-parser'),
 path = require('path'),
-flash = require('connect-flash'),
-session = require('express-session'),
-passport = require('passport'),
-db = require('./routes/db'),
-pp = require('./passport'),
-https = require('https'),
 http = require('http'),
-fs = require('fs'),
-cookieParser = require('cookie-parser'),
-nodemailer = require("nodemailer"),
-TelegramBot = require('node-telegram-bot-api'),
-helmet = require('helmet');
+crypto = require('crypto'),
+helmet = require('helmet'),
+exec = require('child_process').exec;
 
+require('dotenv').config()
 
+function verifyPostData(req, res, next) {
+  const payload = JSON.stringify(req.body)
+  if (!payload) {
+    res.sendStatus(405);
+    return next('Request body empty')
+  }
 
-// Https certs
-var options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/uni-trier.rocks/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/uni-trier.rocks/fullchain.pem')
-};
+  const hmac = crypto.createHmac('sha1', process.env.GIT_SECRET)
+  const digest = 'sha1=' + hmac.update(payload).digest('hex')
+
+  if (digest === req.headers['x-hub-signature']) {
+    return next()
+  }else{
+    res.sendStatus(405);
+  }
+}
 
 
 //configure express
@@ -36,23 +39,33 @@ app.use(helmet());
 
 //routes with session
 var ind = require('./routes/indexroutes'),
-    adm = require('./routes/admin/routes');
+flz = require('./routes/files');
 
-app.use('/admin', adm);
+//Update Server
+app.post("/github/webhook",verifyPostData, function (req, res) {
+    if (req.body.ref=="refs/heads/files"){
+      console.log("Update incoming");
+      exec('cd /home/deploy/uni-trier.rocks && ./deploy.sh', function(err, stdout, stderr){
+          if (err) {
+           console.error(err);
+           res.send(500,err);
+         }else{
+          res.sendStatus(200);
+        }
+      });
+    }
+});
+
 app.use('/', ind);
+app.use('/dateien', flz);
 app.use("/public", express.static(path.join(__dirname, 'public')));
-app.use("/files",express.static('/root/remstorage/fileupload'));
-
+app.use("/files",express.static(process.env.FILE_DIR));
 
 //catchin unkaught errors
 app.use(function(err, req, res, next) {
   console.error(err.stack);
+  res.status(500);
   res.send("Ein Fehler ist aufgetreten!");
-});
-
-// redirect traffic
-httpapp.get("*", function (req, res, next) {
-    res.redirect(301,"https://" + req.headers.host + req.path);
 });
 
 app.get('*',function (req, res){
@@ -65,6 +78,4 @@ app.post('*', function (req, res){
   res.send("404 Post");
 });
 
-// Create an HTTPS service identical to the HTTP service.
-http.createServer(httpapp).listen(80);
-https.createServer(options, app).listen(443);
+http.createServer(app).listen(3000);

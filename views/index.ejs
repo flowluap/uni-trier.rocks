@@ -25,6 +25,7 @@ html,
 body {
   height: 100%;
   background-color: #0080FF;
+  overflow-x:hidden;
 }
 
 .box-container{
@@ -95,11 +96,11 @@ body {
     <% for(i in events){ %>
 
  		<div class="row">
- 			<div class="col-2 text-right">
+ 			<div class="col-3 text-right">
  				<h1 class="display-4"><span class="badge badge-<%= (events[i].event.prio=='low' ? 'secondary' : 'danger') %>"><%= events[i].date %></span></h1>
  				<h2><%= events[i].month %></h2>
  			</div>
- 			<div class="col-10">
+ 			<div class="col-8">
  				<h3 class="text-uppercase"><strong><%= events[i].event.task %></strong></h3>
  				<ul class="list-inline">
  				    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <%= events[i].day %></li>

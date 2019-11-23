@@ -1,0 +1,141 @@
+
+
+\documentclass[11pt]{scrartcl}
+%\usepackage {amsmath}
+\usepackage {amssymb}
+\usepackage[utf8]{inputenc}
+
+\title{Lehramt Mathe Vorlesung 4 Semester 1}
+\author{Paul Wolf}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Vorab}
+\label{sec:vorab-1.2.14}
+
+Prinzip der vollständigen Induktion:
+\begin{itemize}
+\item Eine Aussage A(1) ist richtig (Induktionsanfang IA)
+\item Aus A(n) folgt A(n-1) (Induktionsschritt IS)(Oder aus $A(1)\dots A(n)$ folgt $A(n-1)$)
+\end{itemize}
+Manchmal will man Aussagen $ A(n), n \in \mathbb{Z} , z \geq \mathbb{N} $ zeigen. Dann muss man $A(n)$ als wahr nachweisen und dann zeigen, dass aus $A(n)$ wieder $A(n+1) $ für $n \geq \mathbb{N}$ folgt. Ein Fall für die vollständige Induktion ist:
+
+
+\section{1.2.14 Satz:}
+\label{sec:satz-1.2.14}
+
+Für jedes $n \in \mathbb{N}$ gilt:
+
+$1+2+\dots+n = \sum \limits_{\nu=1}^n \nu = \frac{n(n+1)}{2} $
+
+\subsection*{Beweis (vollständige Induktion):}
+
+\begin{enumerate}
+\item Induktionsanfang (IA):
+
+$n=1$,
+$\sum \limits_{ \nu}^n \nu = 1 = \frac{1(1+1)}{2}$
+
+\item Induktionsschritt (IS):
+
+$\sum \limits_{ \nu}^n \nu = \frac{1(1+1)}{2}$ (Induktionsannahme)
+
+z.z $\sum \limits_{ \nu}^n+1 \nu = \frac{(n+1)(n+1-1)}{2}$
+
+\item Es gilt:
+
+$\sum \limits_{ \nu}^n+1 \nu = n+1+\sum \limits_{ \nu}^n = (n+1) + \frac{(n)(n+1)}{2} = \frac{2(n+1)+n(n+1)}{2} = \frac{(n+1)(2+n)}{2}= \frac{(n+1)(n-1+1)}{2} $
+
+
+\end{enumerate}
+
+\section{1.2.15 Definition:}
+
+Für $n \in \mathbb{N_{O}}$ gilt:
+\begin{flushleft}
+$0! :=1$
+\end{flushleft}
+\begin{flushleft}
+$n! := 1*2*\dots = \prod \limits_{\nu=1}^{n} \nu $ , $ n \geq 1 $
+\end{flushleft}
+\begin{flushleft}
+$0! =1;1!=1;2!=2;3!=6;4!=24$ etc.
+\end{flushleft}
+
+\section{1.2.16 Satz:}
+Ist $n \in \mathbb{N}$, dann hat die Menge $\prod_{n} := S_{n} := \sigma_n := \{\pi:\{1,n\} \rightarrow \{1,\dots,n\}:\pi$ bijektiv$\}$ $n!$ Elemente. $ S_{n}$ heißt auch meist Permutationsgruppe/Geometrische Gruppe.
+
+\section{1.2.17 Definitionen: (Binomialkoeffizienten)}
+Es seien $n, \nu \in \mathbb{N_{O}}$.
+
+\begin{flushleft}
+$ {n \choose 0} := 1 $ (gelesen: n über 0)
+\end{flushleft}
+\begin{flushleft}
+$ {n \choose \nu} := \frac{n(n-1 \dots (n-\nu +1))}{1*2*\dots*\nu} =
+\prod \limits_{k=1}^{\nu} \frac{n-k-1}{k} $ (für $\nu \geq 1$ gelesen Enn über Nü)
+\end{flushleft}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{1.2.19 Satz: (Rekursionsformel für die Binomialkoeffiziente)}
+
+Ist $n \in \mathbb{N_{O}}$,$\nu \in \mathbb{N}$, dann gilt:
+\begin{flushleft}
+	$ {n \choose \nu -1} +{n \choose \nu} = {n+1 \choose \nu} $ 
+\end{flushleft}
+
+\subsection*{Beweis:}
+\begin{enumerate}
+	\item Fall $1 \leqslant \nu \leqslant n$:
+	Dann gilt nach 1.2.18, dass
+	${n \choose \nu -1} + {n \choose \nu} = 
+	{\frac{n!}{(\nu -1)! (n-1-\nu)!}}+{\frac{n!}{\nu!(n+1)!}} = 
+	{\frac{n!\nu}{\nu!(n+1-\nu)!}}+{\frac{n!(n+1-\nu)}{\nu!(n+1-\nu)!}}=
+	{\frac{n!(\nu+n+1-\nu)}{\nu!(n+1-\nu)!}}=
+	{\frac{n!(n+1)}{\nu!(n+1-\nu)!}}={n+1\choose \nu}
+	$
+	\item Fall $\nu = n+1$:
+	${n \choose \nu-1 }+{n \choose \nu}=0={n+1 \choose \nu }$
+	
+\end{enumerate}
+
+\section{1.2.20 Definition:}
+Ist A eine endliche Menge, so sei
+$|A| := \#A$ die Anzahl der Elemente von A. Ist A nicht endlich, so schreibt man $|A| := \#A=+\infty$
+
+\section{1.2.21 Satz:}
+Es sei $n \in \mathbb{N}$, dann gilt für alle $\nu \in \mathbb{N_{O}}$, dass 
+\begin{flushleft}
+	$ |\{M \subset \{1,\dots,n\}: |M|= \nu \}| = {n \choose \nu}$ 
+\end{flushleft}
+Die Anzahl der k-elementigen Teilmenge einer n-elementigen Menge ist ${n \choose \nu}$
+\subsection*{Beispiel ($n=3,\nu=2$):}
+$|\{M \subset \{1,2,3\}:|M|>2\}|=|\{1,2\},\{1,3\},\{2,3\}|=3$
+\begin{flushleft}
+	${n \choose 3} = \frac{3!}{2!(3-2)}=\frac{6}{2*1}=3$
+\end{flushleft}
+Insbesondere ist ${n \choose k} \in \mathbb{N_{O}}$ für alle $n,\nu \in \mathbb{N_{O}} $
+\subsection*{Beweis}
+
+
+
+
+
+
+\end{document}

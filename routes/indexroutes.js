@@ -16,10 +16,11 @@ const weekNames = days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Fr
 
 //get routes
 router.get('/', function (req, res) {
+
   var date = new Date();
   var events = []
   for (var i=0;i<7;i++){
-    date.setDate(date.getDate() + 1);
+
     for (j in ev){
       if (ev[j].day == weekNames[date.getDay()]){
         events.push({'date':date.getUTCDate(),
@@ -28,6 +29,9 @@ router.get('/', function (req, res) {
                      'event':ev[j]});
       }
     }
+    date.setDate(date.getDate() + 1);
+
+
   }
   res.render("index",{'events':events});
 });

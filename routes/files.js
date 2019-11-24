@@ -95,7 +95,7 @@ router.get('/', function (req, res) {
                            pathback:pb,
                          });
     }else{
-      res.render("files_notfound", {title:"Dokumente - Datei nicht gefunden"});
+      res.send("file not found");
     }
 });
 

@@ -10,7 +10,7 @@ Jeder kann Dateien über https://github.com/flowluap/uni-trier.rocks einstellen.
 
 - [ ] Mesa API
 - [ ] Campuspläne
-- [ ] SHortcuts
+- [x] Shortcuts
 - [ ] Veranstaltungen
 
 

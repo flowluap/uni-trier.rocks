@@ -16,6 +16,7 @@ stripPath = function(pfad){
   return path.normalize(pfad.replace("%2e","").replace("%2F"),"").replace(/^(\.\.(\/|\\|$))+/, '');
 };
 
+
 function whatContent(filePath, res){
   var folders = [];
   var filez = [];
@@ -51,7 +52,7 @@ function whatContent(filePath, res){
           filez.push({'name':file,'path':path.join(filePath, file),'icon':(file.split(".")[file.split(".").length-1] in icons ? icons[file.split(".")[file.split(".").length-1]] : "fas fa-file")});
         }
 
-        if (isFolder(path.join(filePath, file)) && file[0] != "." ){
+        if (isFolder(path.join(filePath, file)) && file[0] != "."){
             folders.push({'name':file,'path':path.join(filePath, file),'content':readdirSync(path.join(filePath, file))});
         }
     });

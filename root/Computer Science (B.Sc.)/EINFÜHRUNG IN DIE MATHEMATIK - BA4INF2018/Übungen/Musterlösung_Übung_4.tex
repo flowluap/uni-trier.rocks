@@ -1,0 +1,157 @@
+
+
+\documentclass[11pt]{scrartcl}
+%\usepackage {amsmath}
+\usepackage{amsmath}
+\usepackage {amssymb}
+\usepackage[utf8]{inputenc}
+
+\title{Lehramt Mathe Übung 4 Semester 1}
+\author{Paul Wolf}
+
+
+\begin{document}
+\maketitle
+
+
+\section{Vorab}
+Schreibweisen mit $ \dots $ wenn möglich vermeiden. 
+Statt $a_1 , \dots, a_n $ besser $\sum\limits_{i=1}^n a_i$
+\section{A1}
+Es sei (K,+,*) ein Körper. Für $x,y \in K$ und $n,m \in \mathbb{N}$ zeige:
+
+\subsection{a) $x^n*x^m= x^{n+m}$}
+\subsubsection*{Beweis:}
+\subsubsection*{IA: Sei $n \in \mathbb{N} $und$ m = 1$}
+$x^{n+1} :=^{Asso} \Pi_{i=1}^{n+1} x = (\Pi_{i=1^n} x)x = x^n x^1$
+
+\subsubsection*{IV:}
+Es gelte $x^n x^m = x^{n+m} \forall n \in \mathbb{N}$
+\subsubsection*{IS: ($m \curvearrowright m+1$)}
+(keine Klammern nötrig, da Kommutativgesetz)
+$x^{n+(n+1)} = x^{(n+m)+1} = x^{n+m} x^1 = x^n x^m x^1$ 
+$=^{I.A.} = x^n x^m+1$
+
+\subsection{b) $x^n*y^n= (x*y)^n$}
+\subsubsection*{Beweis:}
+\subsubsection*{IA: $n=1$}
+$x^1*y^1 = (x*y)^1$(stimmt)
+\subsubsection*{IV: Es gelte $x^n*y^n = (x*y)^n$ für $n \in \mathbb{N}$}
+
+\subsubsection*{IS:}
+$(x*y)^{n+1} = (x*y)^n (x*y)^1 = x^n y^n x y = (x^n x)(y^n y) = x^n+1 y^n+1$
+
+\subsection{c)$ (x^m)^n = x^{m*n}$}
+\subsubsection*{Beweis: Sei $m \in \mathbb{N}$}
+\subsubsection*{IA: $n=1$:$ (x^n)^1 = x^n*1$ (stimmt)}
+\subsubsection*{IV: $(x^m)^n = x^{m*n}$ für ein $n \in \mathbb{N}$}
+\subsubsection*{IS:}
+$(x^m)^{n+1} = (x^m)^n * (x^m)^1 \overset{\mathrm{IV}}{=} ^{m*n} x^m = x^{mn+m} = x^{m(n+1)}$
+
+\subsection{d)}
+\subsubsection*{Beweis:}
+$x^n x^{-n} = x^n (x^{-1})^n = (x*x^{-1})^n = (1)^n = 1$
+
+\section{A2:}
+Zeige zuerst: ($\mathbb F_{2}$,+) ist abelsche Gruppe.
+\subsection{i}
+0 ist neutrales Element bzgl. "+". (Auf Tabelle schauen  oder: $0+1=1$,$0+0=0$)
+\subsection{ii (Assoziativ)}
+Seien $a,b,c \in \mathbb F_{2}$
+Falls $a=0$:
+$(a+b)+c = a+(b+c)$
+Falls $b=0$ auch. Falls $c=0$ auch. Falls $a=b=c=1$:
+$(a+b)+c = (1+1)+1 = 0+1=1=1+0=1+(1+1) = a+(b+c)$
+\subsection{iii}
+Jedes Element von $\mathbb F_{2}$ hat ein Inverses, nämlich sich selbst. Für $a \in \mathbb F_{2}: a+a=0 \Rightarrow -a = a$
+\subsection{iv}
+Kommutativität entweder nachrechnen, oder ablesen anhand er Spiegelsymmetrie der Tabelle bzgl. der Diagonalen. \\
+
+\begin{tabular}[h]{c|c|c}
+	+ & 0 & 1 \\
+	\hline
+	0&0&1\\
+    \hline
+	1&1&0\\
+		
+\end{tabular}
+\subsection*{Zeige die weiteren Axiome bzgl. "*"}
+\subsection{v}
+$(\mathbb{F_{2}},*)$ Kommutativ analog zu iv):
+\begin{tabular}[h]{c|c|c}
+	* & 0 & 1 \\
+	\hline
+	0&0&0\\
+	\hline
+	1&0&1\\
+	
+\end{tabular}
+\subsection{vi}
+1 ist neutrales Element bzgl. "*". (Ablesen oder nachrechnen ($1*0=0,1*1=1$))
+\subsection{vii (Assoziativ)}
+Seien $a,b,c \in \mathbb F_{2}$
+Falls $b=0$:
+$(a*b)*c = 0*c = a*0= a(b*c)$
+Falls $b=1$: 
+$(a*b)*c = a*c = a*(b*c)$
+
+\subsection{viii (Inverse bzgl. "*")}
+Für $a \in \mathbb F_{2} \setminus \{0\}$ folgt $a=1$ und damit hat a eine Inverse, nämlich sich slebst:
+$a*a = 1*1= 1 \Rightarrow a^{-1} =a$.$ (1^{-1}=1)$
+
+\subsection{ix (Distributiv)}
+Seien $a,b,c \in \mathbb F_{2}$ Dann:
+Falls $a=0$: $a*(b+c) = 0 = 0+0 = a*b + a*c$ \\
+Falls $a=1$: $a*(b+c) = b+c = a*b + a*c$
+
+\section{A3}
+Zu zeigen: $S_n := \{ \Pi : \{1, \dots, n\} \rightarrow \{1, \dots, n\} : \Pi Bijektion \}$ hat $n!$ Elemnte.
+\subsection={Beweis} Induktion über $n \in \mathbb{N}$
+\subsubsection*{IA $n=1$}
+$S_1$ hat nur 1 Element, nämlich $\Pi : \{1 \} \rightarrow \{1 \} , \Pi (1)=1$ (stimmt)($1=1!$)
+\subsubsection*{IV}
+$\mid S_n \mid = n!$(Nutze $\mid M \mid $ für Menge für die Anzahl Elemente von M)
+
+\subsubsection*{IS $n \Rightarrow n+1$}
+Sei $T_k := \{ \varphi \in S_{n+1} : \varphi (n+1)=k \}$ für $k \in \{1, \dots,n+1 \}$
+Dann $\mid S_{n+1} \mid = \sum\limits_{k=1}^{n+1} \mid T_k \mid$(alle Möglichkeiten für $k \in \{1, \dots,n+1 \}$ werden summiert)
+Bestimme also $\mid T_k \mid$:
+Für $\varphi \in T_k$ gibt es genau eine Bijektion $\psi : \{1, \dots,n \} \rightarrow \{1, \dots,n+1 \setminus \{k\} \}$mit $\varphi (i) = \psi (i) \forall i \in \{1, \dots,n \} $, nämlich $\psi := \varphi_{\{1, \dots,n\}}$
+
+
+\subsection*{2 Sachen zu prüfen:}
+\subsubsection*{1}
+Diese Bijektion ist eindeutig, da $\psi (i) = \varphi (i)$.$\forall i \in \{1, \dots,n\}$alle Funktionswerte vorgibt.
+\subsubsection*{2}
+Das ist eine Bijektion, denn:
+
+\subsubsection*{a)}
+$\psi$ surjektiv,da $\forall j \in \{1, \dots,n+1\} \setminus \{k\} $: \\
+$\psi^{-1} (j) = \varphi^{-1} (j) \in \{1, \dots , n+1\}$udn $\varphi^{-1} (j) \neq n+1$, da \\
+$j \neq k$(da $\varphi \in  T_k$). Also: $\psi^{-1} (j) \in \{1, \dots, n\}$ und damit \\ $\psi^{-1} (\{j\}) \neq \forall j \in\{1, \dots,n+1\} \setminus \{k\} $ 
+
+
+\subsubsection*{b)}
+$\psi$ injektiv, da für $x_1 ,x_2 \in \{1,\dots,n\}$:$\psi (x_1) = \psi (x_2) \Rightarrow \varphi (x_1) = \psi (x_1) = \psi (x_2) = \varphi (x_2) \Rightarrow x_1 = x_2$ \\
+
+Nun gilt also \\
+
+$\mid T_k \mid = \mid \{ \psi : \{1,\dots,n\} \rightarrow \{1,\dots,n+1 \setminus \{k\} : \psi bijektion\} \} \mid = \mid S_n \mid =^{I.V.} n! \Rightarrow \mid S_{n+1} \mid = \sum\limits_{k=1}^{n+1} \mid T_k \mid = \sum\limits_{k=1}^{n+1} n! = (n+1)*n! = (n+1)!$
+
+\section{A4}
+Zu zeigen: $\sum\limits_{k=1}^n k^3 = \frac{1}{4} n^2 (1+n)^2$
+\subsection*{Beweis: }
+\subsection*{IA $n=1$}
+$\sum\limits_{k=1}^1 k^3 = 1^3 = 1 = \frac{1}{4} 1^2 (1+1)^2$(stimmt)
+\subsection*{IV}
+$\sum\limits_{k=1}^n k^3 = \frac{1}{4} n^2 (1+n)^2$ für ein $n \in \mathbb{N}$
+\subsection*{$n \rightarrow n+1$: Es gilt}
+$\sum\limits_{k=1}^n k^3 +(n+1)^3 =^{IV} \frac{1}{4} n^2 (1+n)^2 + (n+1)^3$ \\
+$= \frac{1}{4} n^2 (1+2n +n^2)+1+3n +3n^2 + n^3$\\
+$= \frac{1}{4} (n^2 +2n^3 +n^4) + 1 +3n +3n^2 + n^3$\\
+$= \frac{1}{4} (4 +12n +13n^2 +6n^3 +n^4)$\\
+$= \frac{1}{4} (n^2 +2n +1)(n^2 +4n +4)$\\
+$= \frac{1}{4} (n+1)^2 (n+2)^2$\\
+$= \frac{1}{4} (n+1)^2 (1+(n+1))^2$\\
+\end{document}
+

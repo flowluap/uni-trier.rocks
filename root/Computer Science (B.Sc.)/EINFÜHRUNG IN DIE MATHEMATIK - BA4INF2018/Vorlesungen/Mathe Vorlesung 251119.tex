@@ -1,0 +1,178 @@
+
+
+\documentclass[11pt]{scrartcl}
+%\usepackage {amsmath}
+\usepackage{amsmath}
+\usepackage {amssymb}
+\usepackage[utf8]{inputenc}
+
+\title{Lehramt Mathe Vorlesung 5 Semester 1}
+\author{Paul Wolf}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Vorab}
+\label{sec:vorab-1.2.14}
+Wann immer x,y Elemente einses Körpers sind und $n \in \mathbb{N_{O}}$ ist, gilt:
+$(x+y)^n = \sum \limits_{k=0}^n {n \choose k } x^{ky^{n-k}} = \frac{n(n+1)}{2} $
+
+\section{1.2.23 Folgerung}
+Ist A eine n-elementige Menge, so hat ihre Potenzmenge $2^{n}$ Elemente kurz: $ \mid 2^{A} \mid = 2^{\mid A \mid}$
+
+\subsection*{Beweis}
+$\mid A \mid = $ Anzahl der Elemente von A. \\
+Mit  $\alpha_k^n := \mid \{M \subset A : \mid M \mid = k \} \mid$ gilt nach 1.2.21 \\
+$\mid 2^{A} \mid = \sum \limits_{k=1}^n \alpha_k^n = \sum \limits_{k=1}^n {n \choose k} = $
+$\sum \limits_{k=0}^n {n \choose k} 1^{k} 1^{n-k} = (1+1)^{n}=2^{n}=2^{\mid A \mid}$
+
+\subsection*{Bemerkung}
+Es gilt für x,y Elemente eins Körpers
+\subsubsection*{i}
+$(x+y)^2 = \sum \limits_{k=0}^2 {2 \choose k} y^{k} x^{2-k} $ \\ 
+$=y^0 x^2 + 2(xy) +y^2 x^0$ \\
+$ = x^2 + 2xy +y^2 $
+
+\subsubsection*{ii}
+$(x+y)^3 = \sum \limits_{k=0}^3 {3 \choose k} y^{k} x^{3-k}$ \\
+$ = x^3 + 3x^2 y + 3xy^2 + y^3$ \\
+3. Binomische Formel ? Folgt aus 1.2.12. Besser 1.2.12 ist Verallgemeinerung der 3. Binomischen Formel.\\
+
+Sind $n,m \in \mathbb{Z}$, so setzt man $n < m \overset{def}{\iff} m - n \in N$ 
+
+\section{1.2.24 Definition}
+Es sei K ein Körper. Eine Reaktion auf K heißt Ordnung (auf K) und K heißt dann geordneter Körper, falls gilt:
+
+\subsection*{i}
+Für $x,y \in K$ gilt genau eine der folgendn drei Bezeichnungen (trichotomie) \\
+ $x < y$\\
+ $  x=y$\\
+ $ y < x$\\
+  
+\subsection*{ii}
+
+
+
+\[
+x<z \text{ (transitivität)}=\left \{
+\begin{array}{ll}
+x < y\\
+y < z
+\end{array}
+\right.
+\]
+
+\subsection*{iii}
+\[
+x+z<y+z \text{ (Monotoni bzgl. +)}=\left \{
+\begin{array}{ll}
+x < y\\
+z \in K
+\end{array}
+\right.
+\]
+\subsection*{iv}
+\[
+xz < yz \text{ (Monotoni bzgl. *)}=\left \{
+\begin{array}{ll}
+x < y\\
+0 < z
+\end{array}
+\right.
+\]
+
+
+\section{1.2.25 Bezeichnungen}
+Es sei K ein geordneter Körper. Man setzt für $x,y \in K$ \\
+$y > x \overset{def}{\iff} x < y$\\
+$ x \leq y \overset{def}{\iff} x <y $ oder $x=y$ \\
+$y \geq x \overset{def}{\iff}  x \leq y (\iff y > x $ oder $  x=y)$ \\
+$K^{+} := \{x \in K : x > 0 \}$ \\
+$K_{0}^{+} := \{x \in K : x \geq 0 \}$ \\
+$K^{*} := \{ K \setminus \{0\} \text{(?definiert)} \}$ 
+
+\subsection*{Bemerkung}
+Unsere Hauptbeispiele für geordnete Körper werden $\mathbb{Q}$ und $\mathbb{R}$ die, endliche Körper (wie unser Körper $\mathbb{F_{2}}$) lassen sich nicht ordnen, genauso wenig wie der Körper C der komplexen Zahlen. Es sei wieder \\
+ $\mathbb{Q} = \{ \frac{p}{4} : p,q \in \mathbb{Z},q=0\}$ betrachtet.\\ 
+ Wegen $\frac{p}{q} = \frac{-p}{-q} $ können wir anerkennen, dass $q\in \mathbb{N}$ gilt. \\
+ Wir erhalten $\mathbb{Q} = \{ \frac{p}{q} : p \in \mathbb{Z} , q \in \mathbb{N} \}$ \\
+ Bedeutet $c_{\mathbb{Z}}$ die Ordnung auf $\mathbb{Z}$, d.h. $n<_{\mathbb{Z}}m \iff m-n \in \mathbb{N}$, so sei für \\ $\frac{p_1}{q_1} , \frac{p_2}{q_2} \in \mathbb{Q} , q_j \in \mathbb{N} , j=1,2$ gesetzt \\
+ $\frac{p_1}{q_1} <_{\mathbb{Q}} \frac{p_2}{q_2} \iff p_1 q_2 <_{\mathbb{Z}} p_2 q_1 (\iff p_2 1_1) - p_1 q_2 \in \mathbb{N}$
+	
+\section{1.2.26 Satz}
+$<_{\mathbb{Q}}$ ist eine Ordnung auf $\mathbb{Q}$ und $\mathbb{Q}$ ist damit ein geordneter Körper.
+
+\subsection*{Beweis}
+Wir zeigen exemplarisch (Satz iii) aus 1.2.24 .
+Es sei $x = \frac{p_1}{q_1} , y , \frac{p_2}{q_2} , z = \frac{r}{s} \in \mathbb{Q}$mit
+$\frac{p_1}{q_1} <_{\mathbb{Q}} \frac{p_2}{q_2}$z.z $\frac{p_1}{q_1} + \frac{r}{s} <_{\mathbb{Q}} \frac{p_2}{q_2} + \frac{r}{s}$.
+Ohne Einschränkung sind $q_1,q_2,s \in \mathbb{N}$ Nach Vorraussetzung ist $p_1 q_2 <_{\mathbb{Z}} p_2 q_1$ Dann gilt auch (in $\mathbb{Z}$!)
+$p_1 q_2 s s+r q_1 q_2 s <_{\mathbb{Z}} p_2 q_1 s s+r q_1 q_2 s$
+Ausklammern:
+$(p_1 s+ r q_1) q_2  s <_{\mathbb{Z}} (p_2 + r q_2) q,s$also (nach Def $<_{\mathbb{Q}}$)
+
+$\frac{p_1}{q_1}+ \frac{r}{s} = \frac{p_1 s + r q_1}{q_1 s} <_{\mathbb{Q}} \frac{p_2 s + r q_2}{q_2 s} = \frac{p_2}{q_2} + \frac{r}{s}$
+
+\section{1.2.27 Bemerkung}O
+Wir haben ja via $c : \mathbb{Z} \longmapsto \mathbb{Q}, n \longmapsto \frac{n}{1}$
+$\mathbb{Z}$ als Teilmenge von $\mathbb{Q}$ betrachtet. Es gilt $c()$ Weiter gilt für $n,m \in \mathbb{Z} $
+Wir schreiben also $< $anstelle von$ <_{\mathbb{Q}} $bzw.$ <_{\mathbb{Q}}$
+
+\section{1.2.28 Satz}
+Es sei k ein geordneter Körper und es seien $x,y \in K$. Dann gilt
+\subsection*{i $x > 0 \iff -x < 0 $}
+\subsection*{ii $x,y < 0 \iff x,y > 0 $}
+\subsection*{iii $x' > 0 \iff x \neq 0 $}
+\subsection*{iv $1 > 0$}
+\subsection*{v Aus  $0 < x < y$ folgt $-y < -x < 0$ mit $x^{-1} > y^{-1} > 0$}
+\subsection*{Beweis: Übung}
+
+\section{1.2.29 Satz (Bernoullische Ungleichung)}
+Es sei x ein Element eines geordneten Körpers mit $x \geq -1$ Dann gilt für jedes $n \in \mathbb{N_{O}}$, dass $(1+x)^n \geq 1+nx$.
+\subsection*{Beweis (vollständige Induktion)}
+\subsubsection*{1}
+$n = 0:(1+x)^0 =1= 1+0x$
+\subsubsection*{2}
+$n \longmapsto n+1$: \\
+ Wir dürfen $(1+x)^n \geq 1+nx$(für $x \geq -1$) \\ verwenden und müssen $(1+x)^n+1 \geq 1+ (n+1)x$(für $x \geq -1$) zeigen. \\ Es gilt für $x \geq -1 (1+x)^n+1 = (1+x)(1+x)^n \geq (1+x)(1+nx)$ (monotonie von * Induktionsannahme) \\
+
+$= 1+nx+x+nx^2$ \\
+$= 1+(n+1)x + nx^2$ \\
+$\geq 1+(n+1)x$. (Monotonie von +)
+
+\section{1.2.30 Definition}
+Es sei K eine geordneter Körper. Ist $x \in K$, so heißt \\
+
+ \[
+ \mid X \mid =\left. := \{
+ \begin{array}{ll}
+ x : x > 0 \\
+ -x : x < 0
+ \end{array}
+ \right.
+ \] 
+ $\mid * \mid : K \rightarrow K$,$x \rightarrow \mid x \mid$, heißt Betragsfunktion.
+% Bild einfügen
+
+\section{1.2.31 Bemerkung}
+Sind x,y Elemente eines geordneten Körpers K, so  gilt:
+\subsection*{i}
+$\mid x \mid = \mid -x \mid \geq 0$,
+$x,-x \leq \mid x \mid$,
+$\mid xy \mid = \mid x \mid \mid y \mid$
+\subsection*{ii}
+Ist $y > 0 $so ist $\mid x \mid < y \iff -y < x < y $
+
+\section{1.2.32 Satz (Dreiecksgleichung)}
+Sind x,y Elemente eines georneten Körpers, so gilt $\mid x+y \mid \leq \mid x \mid + \mid y \mid $
+\subsection*{Beweis}
+\subsubsection*{Fall1: $x+y \geq 0$}
+$\Rightarrow \mid x+y \mid = x+y \leq \mid x \mid + y \leq \mid x \mid + \mid y \mid$
+\subsubsection*{Fall2: $x+y < 0$}
+$\Rightarrow \mid x+y \mid = -(x+y) = (-x)+(-y) \leq \mid -x \mid + (-y) \leq \mid -x \mid + \mid -y \mid = \mid x \mid + \mid y \mid$
+
+
+
+\end{document}

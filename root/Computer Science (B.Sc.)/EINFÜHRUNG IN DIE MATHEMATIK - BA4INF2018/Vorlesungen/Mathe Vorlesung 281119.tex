@@ -1,0 +1,142 @@
+
+
+\documentclass[11pt]{scrartcl}
+\usepackage {amsmath}
+\usepackage {amssymb}
+\usepackage[utf8]{inputenc}
+
+\title{Lehramt Mathe Vorlesung 6 Semester 1 }
+\author{Paul Wolf}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Später}
+$x^2 = 2$ hat keine Lösung in $\mathbb{Q}$. Das Äquivalent  zu $\{x \in \mathbb{Q} : x^2 \leq 2\}$ hat keine kleinste obere Schranke in $\mathbb{Q}$
+\section{1.2.34 Definition}
+Es sei K ein geordneter Körper (Standardbeispiel: $\mathbb{Q}$, später: $\mathbb{R}$). Weiter sei $M \subset K$
+\subsection{i}
+$x \in K$ heißt obere (untere) Schranke
+für $M_1$ falls $m \leq x$($x \leq m$) für alle $m \in M$
+\subsubsection*{Mitlaufendes Beispiel:}
+$M := \{ x \in \mathbb{Q} : x^2\leq 2\}$ \\
+Ist $x^2 \leq 2 \Rightarrow \mid x \mid \leq \frac{3}{2}$ () z.B. da $\frac{3}{2}^2 = \frac{9}{4} > 2 \Rightarrow x^2 \leq 2 \Rightarrow \mid x \mid \leq \frac{3}{2}$ \\
+Damit ist $x = \frac{2}{3}$ oberste Schrnake und $x = - \frac{3}{2}$ untere Schranke von M 
+\subsection{ii}
+M heißt nach oben (unten) beschränkt, falls M eine obere (untere) Schranke besitzt.
+\subsubsection*{Mitlaufendes Beispiel:}
+M ist beschränkt, da M eine obere und untere Schranke hat!
+\subsection*{iii}
+M heißt beschränkt, falls M nach oben und unten beschränkt ist
+\subsection{iv}
+Eine obere (untere)  Schranke x von M heißt Supremum (Infinum) von M, falls $y \geq x $($y \leq x$) für alle oberen (unteren) Schranken von M.
+\subsubsection*{Mitlaufendes Beispiel:}
+$x \in K$ ist Supermum von $M \subset K$ falls x die kleinste obere Schranke von M ist . \\
+$x \in K$ ist Infinium von $M \subset K$ falls x die größte untere Schranke von M ist. \\
+
+\subsection{v}
+Ein Spupermum (Infinum) von M heißt Maximum (Minimum) von M, falls zusätzlich $x \in M$ gilt.
+
+\subsubsection*{Beispiel}
+$M := \{ M \in \mathbb{Q} : -2 < m \leq 3 \}$ \\
+Dann ist -2 untere Schranke, 3 obere Schranke von M. -2 ist auch größte untere Schranke von M, also Infinum von M, also kein Minimum (da $-2 \notin M$), 3 ist kleiste obere Schranke von M, $3 \in M$, also sogar Maximum von M. \\
+2=inf M(Minuimum existiert nicht) \\
+3=sup M =max M
+
+\section{1.2.35 Bemerkung/Definition}
+\subsection{i}
+M ist beschränkt genau dann, wenn ein $y \in K$mit $\mid m \mid \leq y, m \in M$.
+\subsection{ii}
+Supermum und Infinum müssen NICHT existieren, auch wenn die vorliegende Menge beschränkt ist. \\
+Ist $y$ doch $x \in K$ Supermum (Infinum) von $M \subset k$ so ist x aufgrund der Trichotomie schon eindeutig und wir schreiben:
+$sup M := x$ \\
+($inf M := x$)
+\subsection{iii}
+Auch wenn für $M \subset k$ $sup M$($inf M$) existieren, so braucht M kein kein Maximum (Minimum) besitzen. Ist $y$ doch $sup M $($inf M$) existent und gehört zu M, so setzen wir $max M := sup M$($sup M := inf M$) 
+\section{1.2.36 Satz (Satz von Archimedes für $\mathbb{Q}$)}
+Sind $x,y \in \mathbb{Q}, x,y > 0$, dann existiert auch ein $m \in \mathbb{N}$ mit \\
+$nx = x, \dots,x = \frac{n}{1} x > y $x klein, y groß
+\subsection*{Beweis}
+$x = \frac{p_1}{q_1}$,$y = \frac{p_2}{q_1}$, $p,q \in \mathbb{N}$ \\
+Setze $n := p_2 q_2$ Dann gilt $nx := \frac{n}{1} x  = \frac{n p_1}{q_1} = \frac{p_2 q_1 P_1}{q_1} = \frac{p_1 q_2}{1} * \frac{q_1 p_2}{q_1 q_2} \geq \frac{p_2}{q_2} = y$ \\
+
+Folgendes Korollar kann man natürlich auch direkt beweisen:
+\section{1.2.37 Folgerung}
+Fassen wir $\mathbb{N}$(wie üblich) als Teilmenge von $\mathbb{Q}$
+auf, so ist $\mathbb{N}$ nach unten durch 1 und nicht nach oben beschränkt. \\
+Weiter existiert zu jedem $x \in \mathbb{Q}$ ein $n \in \mathbb{N}$ mit $m > x$.
+\section{1.2.38 Bemerkung}
+In jedem Körper K kann man die Gleichung $nx = y
+$ für jedes $y \in K$ und jedes $n \in \mathbb{N}$ eindeutig lösen. \\
+Daraus folgt aus $n *1 > 0$, also $x = (n-1)^{-1}y$. \\
+Leider sieht dies bei Gleichungen $x^n = y$ ganz anders aus: \\
+z.B. $x^2 = y$: \\
+Ist $x \in K$ Lösung $\overset{x^2 \geq 0}{\Rightarrow} y > 0$ \\
+In keinem geordneten Körper k hat die Gleichung $x^2 = y$ eine Lösung für negatives $y \in k$. ($\rightarrow$ Körper $\mathbb{Q}$ der komplexen Zahlen). \\
+Aber es kommt schlimmer:
+\section{1.2.39 Satz}
+Es gibt keine rationale Zahl $z \in \mathbb{Q}$ mit $x^2 = 2$. \\
+%hier Zeichung
+$x^2 = 1^2 +1^2=2$\\
+$x \notin \mathbb{Q} \rightarrow R$
+\subsection*{Beweis}
+1. wir zeigen zunächst : ist $p \in \mathbb{Z}, p^2$gerade $\Rightarrow$ p gerade
+Ansonsten: \\
+P ungerade, aber $p^2$gerade, also $p=r+1$ für ein $r \in \mathbb{Z}$, \\
+$p^2= 4r^2 +4r +1$, also auch ungerade \\
+
+2. Wir nehmen an, dass $x \in \mathbb{Q}$existiert mit $x^2=2$.$x > 0$. \\
+Betrachte $\{ R \in \mathbb{N} : x = \frac{s}{r}$ für ein $s \in \mathbb{N}\}$ Dann hat die Menge ein minimales Element $q$. \\
+Das heißt:Es gibt $p \in \mathbb{N}$ mit (*) \\
+$x = \frac{p}{q}$ und q ist kleinstmöglich. \\
+Es folgt $x^4 = \frac{p^2}{q^2} = 2 \Rightarrow p^2 = 2q^2 \Rightarrow p$ gerade \\
+$\Rightarrow p=2 p_O$mit einem $p_O \in \mathbb{N}$. \\
+$\Rightarrow 2q^2 = p^2 = 4 p_O^2 \Rightarrow q^2 = 2p^2$, \\
+also $4= 2 q_O$ mit einem $q_O \in \mathbb{N}$. \\
+$\Rightarrow x = \frac{p}{q} = \frac{2 p_O}{2 q_O} = \frac{p_O}{q_O}$ und $q_O < q$, $q_O, p_O \in \mathbb{N}$ \\
+Das ist ein Wiederspruch  in (*), also war die Annahme $x^2 =2$ falsch , damit gibt es also kein $x \in \mathbb{Q}$ mit $x^2 = 2$. \\
+Zusammenhang von 1.2.39 war Existenz von Supermum bzw. Ininum.
+
+\section{1.2.40 Satz}
+Es sei k ein geordneter Körper $n \in \mathbb{N}$,$c \in K$,$c > 0$ Weiter sei \\
+$M := \{ x \in k : x^n \leq c, x \geq 0 \}$
+\subsection{i}
+Damit ist M beschränkt und nicht leer
+\subsection{ii}
+Existiert $s= suo M$, so gilt $s^n = c$ \\
+und s ist die eindeutige positive Lösung der Gleichung $x^n = c$
+
+\subsection*{Beweis}
+\subsection{i}
+$= \in M \Rightarrow M = \varnothing$ \\
+o ist untere Schranke, da Minimum. 1+c ist obere Schranke, da für $x \in M$gilt $x^n \leq c \overset{\text{Bernoulli}}{\leq} (1+c)^n \Rightarrow x \leq 1+c $
+\subsection{ii}
+Ist $0 \leq b \leq a$ dann gilt $a^n - b^n \leq n(a-b)n^{n-1} $ \\
+$a^n-b^n \overset{\mathrm{1.2.12}}{=} (a-b) = \sum\limits_{\nu = 0}^{n-1} a^{\nu} b^7{n-1-\nu} \leq (a-b)n*a^{n-1}$ 
+\subsubsection{a)}
+Angenommen $s^n > c$. Dann $\delta > c$mit $(s-\delta)^n \leq c$, \\
+Setze in (*), $a=s$,$b=s-\delta$,$\delta = \frac{s^n -c}{ns^{n-1}}$ \\
+Zu $x \in M$, so ist $x^n \leq c \leq (s-\delta)^n$ \\
+$\Rightarrow x \leq s -\delta$, Wiederspruch zu $s=sup M$.
+\subsubsection{b}
+Ähnlich: $s^n$kann nicht kleiner als c sein: \\
+a) und b) $\Rightarrow s^n = c$
+
+\section{1.2.41 Definition}
+Ein geordneter Körper k heißt vollständig geordneter Körper, falls jede nicht leere, nach oben beschränkte  Teilmenge ein Supermum besitzt.
+\section{1.2.42 Bemerkung}
+Ist K wie in 1.2.41, $c \geq 0$, dann existiert genau ein $x > 0$mit $x^n =c$ \\
+$\sqrt[n]{c} =x$ , $ \sqrt[]{c} = \sqrt[2]{c}$
+\section{1.2.43 Satz}
+Es exisitert ein vollständig geordneter Körper $\mathbb{R}$, der eine Erweiterung von $\mathbb{Q}$ ist.
+\section{1.2.43 Bemerkung}
+Die Elemente von $\mathbb{R}$ heißen reelle. Es gibt \\
+\subsection{i}
+Für alle $x \in \mathbb{R}$ existiert $n \in \mathbb{N}$mit $n > x $ 
+\subsection{ii}
+Sind $x,y \in \mathbb{R}$ , $x < y$ , so existiert $q \in \mathbb{Q}$ mit $x < q < y$ \\
+1.2.43 und 1.2.44 sind schwer!
+
+\end{document}

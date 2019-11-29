@@ -1,0 +1,132 @@
+
+
+\documentclass[11pt]{scrartcl}
+%\usepackage {amsmath}
+\usepackage {amssymb}
+\usepackage[utf8]{inputenc}
+
+\title{Lösung Übung DSL Ü4 Semester 1}
+\author{Paul Wolf}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section*{}
+(sorry für das Deutsch, habe es nur abgeschrieben...) \\
+Im Folgenden werden teilweise Worte, wie "und", "oder" durch ihre logischen Operanten $\land$ , $\lor$ ersetzt.
+
+\section{A1}
+E seien $A,B,C,D \subseteq U$ Mengen. Zeigen Sie: \\
+\subsection{1}
+$(A \cap B )x(C \cap D) = (AxC) \cap (BxD)$ \\
+Recall: $AxB = \{(x,y) \mid x \in A, y \in B\}$ \\
+$(AxB)x(C \cap D) = \{(x,y)\mid x \in A, y \in B \land y \in C \cap D\}$\\
+$= \{(x,y)\mid x \in A \land x \in B \land y \in C \land y \in D\}$\\
+$= \{(x,y)\mid (x,y) \in AxC \land (x,y) \in BxD \}$\\
+$= (AxC) \cap(BxD)$
+
+\subsection{2}
+$(A \cup B)x(C \cup D) = \{(x,y) \mid x \in A \lor x \in B, y \in C \lor y \in D \}$ \\
+$= \{(x,y) \mid x \in A, y \in C $ oder \\
+$x \in A, y \in D $ oder \\
+$x \in B, y \in C $ oder \\
+$x \in B,y \in D \}$
+
+$= \{(x,y) \mid (x,y \in AxC) \in AxD \\
+(x,y) \in BxC \\
+(x,y) \in BxD \}$ \\
+$= (AxC) \cup (AxD) \cup (BxC) \cup (BxD)$
+
+\subsection{3}
+$(\overline{AxB})=(\overline{A} xB) \cup (Ax \overline{B}) \cup (\overline{A} x \overline{B})$ \\
+1: $\overline{A}^u$(u ist das Universum) \\
+2: $\overline{B}^u$ \\
+Recall: $\overline{A} = \{ x \mid x \notin A, x \in U \}$ \\
+$\overline{A} = U \setminus A$
+
+\subsubsection{i}
+Sei $(x,y) \in \overline{AxB}$ \\
+$\Rightarrow x \in \overline{A}, y \in B $oder \\
+$x\in \overline{A}, y \in \overline{B}$ oder \\
+$x \in A, y \in \overline{B}$ \\
+$\Rightarrow (x,y) \in \overline{A} x B$ oder \\
+$(x,y) \in \overline{A} x \overline{B}$ oder \\
+$(x,y) \in A x \overline{B}$
+$\Rightarrow (x,y) \in (\overline{A} x B) \cup (A x  \overline{B}) \cup (\overline{A} x \overline{B})$
+\subsubsection{ii}
+Sei $(x,y) \in (\overline{A} x B) \cup (A x \overline{B}) \cup (\overline{A} x \overline{B})$ \\
+$\Rightarrow genau umgekehrt (i)$
+
+\subsection{4}
+$(AxB) \setminus (CxD) = (Ax(B \setminus B)) \cup ((A \setminus C) xB)$ \\
+$(AxB) \setminus (CxD) = (AxB) \cap (CxD)$ \\
+$= (AxB) \cap ((\overline{C} xD) \cup (Cx \overline{D}) \cup (\overline{C} x \overline{D})) $ \\
+$= (AxB) \cap (\overline{C} x D) \cup (AxB) \cap (C x \overline{D}) \cup (AxB) \cap (\overline{C} x \overline{D})$ \\
+$= (A \cap \overline{C})x(B \cap D) \cup (A \cap C)x(B \cap \overline{D}) \cup (A \cap \overline{C})x(B \cap \overline{D})$ \\
+$Ax(B \cap \overline{D}) \cup ((A \cap \overline{C})xB)$ \\
+$= (Ax(B \setminus D)) \cup ((A \setminus C)xB)$
+\subsubsection*{Anmerkung}
+$(AxB) \cup (CxD) \neq (A \cup C)x(B \cup D)$ \\
+$(AxB) \cup (CxD) \subseteq (A \cup C)x (B \cup D)$ \\
+Wenn (A1a) die Vereinigung nicht stimmt...
+
+\section{A2}
+1. Familie, Freunde \\
+$(2,3)$ sei $R \subseteq X = X$ eine Relation. \\
+Dann
+\subsection*{i}
+R ist reflexiv $iff \overline{R} \subseteq XxX$ ist irreflexiv \\
+\subsection*{ii}
+R ist irreflexiv $iff \overline{R} \subseteq XxX$ ist reflexiv \\
+
+Beweis sei $R \subseteq XxX$ eine Reflexion \\
+dann $\forall x \in X : (x,x) \in R$ \\
+durch Definition von $\overline{R} : (x,y) \in R \Rightarrow (x,y) \notin \overline{R}$ \\
+das gilt auch für $(x,y)$ und so $\forall x \in X : (x,x) \notin R$ \\
+Deshalb ist $\overline{R}$ irreflexiv. \\
+
+$III^{log}$ (genauso ähnlich):\\
+$\forall x \in X : (x,x) \notin R \Rightarrow \neg (x,y) \notin \overline{R}$ \\
+durch doppelte negation: $(x,y) \in \overline{R}$ \\
+Der umgekehrte Teil folgt von dem Fakt, dass $\overline{(\overline{R})} = R$ durch relativ Komplement vom relativen Komplement. \\
+
+\subsection*{}
+$(2,3)$ sei $R \subseteq X = X$ eine Relation. Dann ist R symmetrisch $\iff \overline{R} \subseteq XxX$ auch symmetrisch: \\
+\subsection{Beweis}
+Sei $R \subseteq XxX$ ist symmetrisch. \\
+Durch symmetrie von Relationen ist symmetrisch \\
+$(x,y) \in R \iff (x,y) \in R$ \\
+Annahme, dass $\overline{R} \subseteq XxX$ ist antisymmetrisch, dann \\ 
+$\exists (x,y) \in \overline{R} : (y,x) \in \overline{R}$ \\
+Aber durch Def. von $\overline{R} (y,x) \in R$ \\
+$R ist symmetrisch (x,y) \in R \Rightarrow \Leftarrow$ zu $(x,y) \in \overline{R}$ \\
+So ist $\overline{R}$ symmetrisch. Ähnlich folgt die umgekehrte Richtung.
+
+\subsection{Anmerkung}
+$(x,y) \in R \iff (y \in X) \in R$ \\
+Beweis: Sei R symmetrisch \\
+$(x,y) \in R \Rightarrow (y,x) \in R$ \\
+$(y,x) \in R \Rightarrow (x,y) \in R$ \\
+$(x,y) \in R \iff (y,x) \in R$ (bidirektional)
+
+\section{A3}
+Die Kugel (a,c) und (b,c) müssen im Komplement der geschnittenen Menge liegen d.h. in $(R \cup R^{-})$. Der Fall $(a,c) \in R$ und $(b,c) \in R^{-}$ würde wegen der Transitivität $(a,b) \in R$ ergeben, was der Vorraussetzung wiederspricht, analog kann $(a,c) \in \overline{R}$ und $(b,c) \in R^{-}$ nicht sein, da auch $R^{-}$ transitiv ist und dies $(a,b) \in R^{-}$ ergeben würde. \\
+Die Behautung wird nur erfüllt, wenn beide Tupel entweder in $R$, oder $\overline{R}$ liegen.
+
+\section{A4}
+$M = \{0,1,2,3,4,5\}$ \\
+$R,S \subseteq MxM$ \\
+$R = \{(1,1),(2,1),(3,1) \}$ \\
+$S = \{(1,1),(1,3),(3,3),(4,5) \}$ \\
+$RoS = \{ (1,1),(1,3),(2,1),(2,3),(3,1),(3,3) \} $ \\
+Extra: $SoR = \{(1,1),(3,1) \}$ \\
+
+\subsection*{Definition}
+$RoS = \{ (x,z) \mid \exists y \in Y, (x,y) \in R \land (y,z) \in S\}$ \\
+$R \cap S = \{ (x,y) \mid (x,y) \in R \land (x,y) \in S \}$ \\
+$R \cup S = \{ (x,y) \mid (x,y) \in R \lor (x,y) \in S \}$
+
+
+
+\end{document}

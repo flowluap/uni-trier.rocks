@@ -1,0 +1,125 @@
+
+
+\documentclass[11pt]{scrartcl}
+\usepackage {amsmath}
+\usepackage {amssymb}
+\usepackage[utf8]{inputenc}
+
+\title{Lösung Einführung in die Mathematik Übung 5 Semester 1}
+\author{Paul Wolf}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{A1}
+K geordneter Körper und $x,y \in K$ \\
+\subsection{i}
+Zu zeigen: \\
+$(x < 0 \land y < 0)$ oder \\
+$x^{'} > 0 \land y > 0$ , so folgt  $0 < x^{'} *y$
+\subsubsection*{Beweis}
+(*) $a,b \in K$,$a < b$, $c > 0 \Rightarrow ac < bc$ \\
+Mnotonie bzgl. "*".
+\subsubsection*{Fall 1}
+$x > 0 \land y > 0 \overset{\text{(*)}}{\Rightarrow} xy > 0y = 0$; $[a=0,b=x,c=y]$
+\subsubsection*{Fall 2}
+$x < 0 \land y < 0 $\\
+$\Rightarrow xy = (-x)(-y) > 0(-y) =0$ (Fall 1 mit $-x > 0 \land -y > 0$)
+\subsection{ii}
+Zu zeigen: \\
+$0 < x^2 \iff x \neq 0$
+\subsubsection*{Beweis "$\Rightarrow$" Kontraposition}
+Sei $x=0$, dann: $x^2 = xx =0*0=0 \ngtr 0$
+\subsubsection*{Anmerkung}
+"$A \Rightarrow B$"$\iff (\neg B \Rightarrow \neg A )$
+
+\subsubsection*{Beweis "$\Leftarrow$"}
+Sei $x \neq 0$ Dann gibt es 2 Fälle: (Trichotomie): \\
+(1) $x > 0$ \\
+(2) $x < 0$ \\
+Im Fall 1: $x^2 = xx \overset{(i)}{>} 0 $ \\
+Im Fall 2: $x^2 = (-x)(-y) \overset{(i)}{>} 0$
+\subsection{iii}
+Zu zeigen: $0 < 1 $: \\
+Nach Definition eines Körpers ist $1 \neq 0$, deshalb: \\
+$1 = 1*1 = 1^2  \overset{(ii \Rightarrow)}{>} 0$
+
+\subsection{iv}
+Zu zeigen: $0 < x < y$, so folgt $0 < y^{-1} < x^{-1}$
+\subsubsection*{Beweis}
+Sei $0 < x < y$, $x \neq 0 \land y \neq 0$ (Tansitivität $\Rightarrow 0 < y$) \\
+$\Rightarrow \exists x^{-1} \land y^{-1} \in K$: $x*x^{-1} = y*y^{-1}$ Damit: \\
+(**) $y^{-1} = y^{-1} * (y*y^{-1}) \overset{asso}{=} (y^{-1}*y^{-1})*y \overset{(i)}{>} 0 $ \\
+Weiter gilt: \\
+ $y^{-1} = y^{-1} * (x*x^{-1}) \overset{kommu}{=} x(y^{-1}*x^{-1}) < y(y^{-1}*x^{-1}) \overset{asso,kommu}{=} (y*y^{-1})x^{-1} = x^{-1}$ \\
+Damit ist die Aussage gezeigt.
+
+\section{A2}
+\subsection{i}
+Zu zeigen: $\forall n,m \in \mathbb{N}$:$\sum\limits_{k=1}^{n} {m+k-1 \choose m} = {m+n \choose m+1}$ 
+\subsubsection*{Beweis}
+\subsubsection*{IA $n=1$}
+$\sum\limits_{k=1}^1 {m+k-1 \choose m} = {m \choose m} = 1 = {m +1 \choose m+1}$ (stimmt) \\
+\subsubsection*{IV $n \curvearrowright n+1$}
+Es gelte (*) für ein $n \in \mathbb{N}$
+\subsubsection*{IS}
+$\sum\limits_{k=1}^{n+1} {m+k-1 \choose m} = \sum\limits_{k=1}^{n} {m+k-1 \choose m} + {m+n \choose m} \overset{IV}{=} {m+n \choose  m+1}+ {m+n \choose m} = {m+ (n+1) \choose m+1}$
+\subsubsection*{Anmerkung}
+Aus Vorlesung bekannt: für $n \in \mathbb{N}, k \in \{1,\dots,n\}$: \\
+${n choose k} + {n \choose k+1} = {n+1 \choose k+1}$
+\subsection{ii}
+$m=1$: \\
+$\sum\limits_{k=1}^n {k \choose 1} \overset{(i), n=1}{=} {n+1 \choose 2} = \frac{n(n+1)}{2} = \sum\limits_{k=1}^n k^1$
+$m=2$: \\
+$\sum\limits_{k=1}^n {k \choose 2} \overset{(i)}{=} {n+2 \choose32} = \frac{n(n+1)(n+2)}{6} = (\sum\limits_{k=1}^n k^2)$
+
+\subsection{iii}
+Zu zeigen: \\
+$\sum\limits_{k=1}^n k(k+1) = \frac{n(n+1)(n+2)}{3}$ ($k(k+1) = 2*{k+1 \choose 2}$)
+\subsection*{Beweis}
+(ii) für $m=2$: \\
+$\sum\limits_{k=1}^n k(k+1) = 2* \sum\limits_{k=1}^n \overset{(i),m=2}{=} \frac{n(n+1)(n+1)}{6}$ \\
+Oder Ergebnis raten und mit Induktion beweisen.
+
+\section{A3}
+$M := \underset{k \in \mathbb{N}}{U}  \{x \in\mathbb{Q} : \frac{1}{2k} \leq x < \frac{1}{2k - 1} \}$ \\
+
+\subsection*{Zu zeigen: $sup M=1 \notin M$ Beweis}
+-  $1 \notin M$, da für $x \in M$ gilt: $\exists k \in \mathbb{N}$: $x < \frac{1}{2k-1} < 1$. \\
+
+- $sup M=1 $, da 1 obere Schranke für M ist. (siehe eine Zeile drüber) \\
+
+und zwar die kleinst, da (Beweisstruktur. Nehme an, es gäbe eine kleinere und zeige.dass das dies dann keine obere Schranke mehr ist). \\
+für $\varepsilon \in (0, \frac{1}{2}) = \{ x \in \mathbb{R} : 0 < x < \frac{1}{2} \}$ und $\varepsilon \in \mathbb{Q}$: \\
+
+
+$1-\varepsilon \in \{x \in \mathbb{Q} : \frac{1}{2} < x < 1 \}$ \\
+
+
+$\subseteq M $, da $\uparrow$ die Menge für $k=1$ aus der Vereinigung ist, über die M definiert ist. Also ist $1 - \varepsilon$ keine obere Schranke  mehr. \\
+Zusammenfassung $sup$/$max$: \\
+$sup M =1$ und $max M$ existiert nicht, da $sup M \neq M$
+\subsection*{Anmerkung1}
+$a,b \in \mathbb{R}$: \\
+$(a,b) := \{ x \in \mathbb{R} : a < x < b\}$ \\
+$[a,b] := \{ x \in \mathbb{R} : a \leq x \leq b\}$
+
+\subsection*{Anmerkung2}
+Für $\varepsilon_2 > \frac{1}{2}$ ist das erst Recht keine obere Schranke mehr, da \\
+$1 - \varepsilon_2 \leq 1-\frac{1}{2} = \frac{1}{2} \leq 1 - \varepsilon$
+
+
+
+
+\subsection*{Zu zeigen: $inf M=0 \notin M$ Beweis}
+$0 \notin M$, da $\frac{1}{2k} \nleq 0$  $\forall k \in \mathbb{N}$ und für $x \in M$: $0 < \frac{1}{2k} \leq x $ für ein $k \in \mathbb{N}$. \\
+(Für alle $x \in M$ folgt $0<x \Rightarrow 0 \notin M$.) 
+\subsection*{$inf M=0$}
+Da 0 untere Schranke für M ist und zwar die größte, denn füt $\varepsilon \in \mathbb{Q}$ mit $\varepsilon > 0$: \\
+$\exists k_O \in \mathbb{N}$: $\frac{1}{2k_O} \leq \varepsilon = 0 + \varepsilon $ \\
+$\Rightarrow \exists x \in M$: $x < \frac{1}{2(k_O+1)-1} = \frac{1}{2k_O +1} \leq \frac{1}{2k_O} \leq 0+\varepsilon$, also ist $0+\varepsilon$ keine  untere Schranke für M.
+\subsection*{Zusammenfassung}
+$inf M =0$ und $min M$ existiert nicht, da $inf M \notin M$
+\end{document}

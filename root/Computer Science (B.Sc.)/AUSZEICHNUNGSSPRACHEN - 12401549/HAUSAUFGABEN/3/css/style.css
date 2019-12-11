@@ -1,0 +1,127 @@
+
+
+/* root formatting */
+html {
+    /* spacing */
+    margin: 0em;
+    padding: 0em;
+    line-height: 1.2em;
+
+
+    /* font */
+    font-family: Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
+    font-size: 1em;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+
+    /* colours */
+
+    color: #000000;
+}
+body{
+    background-color: grey;
+}
+
+/* format headings */
+h1, h2, h3, h4, h5, h6 {
+    /* font */
+    font-family: Verdana;
+    font-weight: normal;
+    font-size:150%;
+
+}
+
+h1, h2 {
+    /* font */
+    font-weight: bold;
+}
+
+h3:first-letter{
+    font-size: 150%;
+}
+/* I thought that numbers would be like: 2.5... */
+h1 { font-size: 250% }
+h2 { font-size: 200% }
+h3 { font-size: 150% }
+h4 { font-size: 100% }
+h5 { font-size: 50% }
+h6 { font-size: 0% }
+
+em{
+    background-color: red;
+}
+
+p{
+    font-family: Georgia;
+}
+
+p:first-letter{
+    font-size: 150%;
+    color:red;
+}
+
+.yellow-bg{
+    background-color: yellow;
+}
+div{
+    padding:10px;
+    margin:10px;
+}
+
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+li{
+    margin-left: 50px;
+}
+
+.display_header{
+    background-color: white;
+    padding-bottom: 100px;
+    margin-bottom: 30px;
+    box-shadow: 10px 5px 5px blue;
+}
+
+/* css grid */
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: [col1] 300px [col2];
+    grid-template-rows: [row1] auto [row2];
+}
+
+.box-left {
+    grid-column: col1 ;
+    grid-row: row1 / row2;
+}
+.box-left ol{
+    width:120%;
+    padding: 10px;
+    background-color: yellow;
+}
+
+.box-left div{
+    padding: 10px;
+    background-color: cyan;
+}
+
+.box-right {
+    grid-column: col2 ;
+    grid-row: row1 / row2;
+
+}
+
+section{
+    background-color: white;
+    margin: 30px;
+    border: solid 2px black;
+
+}
+.footer{
+    text-align: center;
+    box-shadow: -5px -5px 5px  blue;
+}

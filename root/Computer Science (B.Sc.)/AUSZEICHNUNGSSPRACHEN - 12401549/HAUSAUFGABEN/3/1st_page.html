@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8"> <!-- sollte "US-ASCII" gewählt werden, können z.B. keine Umlaute angezeigt werden -->
+    <title>Übung 1 - HTML</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="wrapper">
+<div class="box-left">
+    <div>
+    <h1>Verzeichnis der Übungen</h1>
+        <ol>
+            <li><a href="#Übung_1">Übung 1 - Verweise im Fließtext</a></li>
+            <li><a href="#Übung 2 - Verweise mit Zeilenumbrucht">Übung 2 - Verweise mit Zeilenumbrucht</a></li>
+            <li><a href="#Übung_3">Übung 3 - Bilder</a></li>
+            <li><a href="#Übung_4">Übung 4 - Verweise auf Abschnitte in anderen Dokumenten</a></li>
+            <li><a href="#Übung_5">Übung 5 - Simple Formulare</a></li>
+        </ol>
+    </div>
+</div>
+    <div class="box-right">
+    <div class="display_header">
+        <div class="float-left">
+            <h1>Auszeichnungssprachen</h1>
+            <p>Ü2 - CSS</p>
+        </div>
+        <div>
+            <img class="float-right" src="img/uni_trier.JPG" alt="Universität Trier" id="Uni Trier"/>
+        </div>
+    </div>
+    <section>
+    <div id="Übung_1"><h2>Übung 1 - Verweise im Fließtext</h2>
+        <p><a class="yellow-bg">Auflistung von Links in einem Fließtext ist möglich, manchmal angebracht, aber meist ist eine Auflistung besser.
+            Als Beispiel diene dieser Text mit einem Link zu</a>
+            <a href="http://www.google.de">Google</a>
+            , oder ein Link zur besten Episode aus Star Trek: The Next Generation
+            <a href="https://en.wikipedia.org/wiki/Darmok">Darmok</a>,
+            oder ein Link zur <em>schlechtesten</em> Episode aus TNG
+            <strong><a href="https://en.wikipedia.org/wiki/Code_of_Honor_(Star_Trek:_The_Next_Generation)"
+               title="Season 1, Episode 4">Code of Honor</a></strong>,
+            dicht gefolgt von
+            <a href="https://en.wikipedia.org/wiki/Sub_Rosa_(Star_Trek:_The_Next_Generation)"
+               title="Season 7, Episode 14">Sub Rosa</a>.
+            Und hier ein Verweis zu einem lokalen HTML-Dokument
+            <a href="2nd_page.html" title="2. HTML-Dokument">weiteres Dokument</a>.
+        </p>
+    </div>
+    </section>
+    <section>
+    <!-- Die ID eines divs kann auch Leerzeichen enthalten, ist aber kein guter Stil -->
+    <div id="Übung 2 - Verweise mit Zeilenumbrucht"><h2>Übung 2 - Verweise mit Zeilenumbruch</h2>
+        <p>Mit Zeilenumbruch würde das ganze so aussehen:<br/>
+            <a href="https://www.google.de">Google</a><br/>
+            <a href="https://en.wikipedia.org/wiki/Darmok">Darmok</a>, die beste Episode aus Star Trek: The Next Generation<br/>
+            <a href="https://en.wikipedia.org/wiki/Code_of_Honor_(Star_Trek:_The_Next_Generation)"
+               title="Season 1, Episode 4"><strong>Code of Honor</strong></a> die schlechteste Episode aus TNG<br/>
+            dicht gefolgt von <a href="https://en.wikipedia.org/wiki/Sub_Rosa_(Star_Trek:_The_Next_Generation)"
+               title="Season 7, Episode 14">Sub Rosa</a><br/>
+            Und hier ein Verweis zu einem lokalen HTML-Dokument <a href="2nd_page.html">weiteres Dokument</a>.
+        </p>
+    </div>
+    </section>
+        <section>
+    <div id="Übung_3"><h2>Übung 3 - Bilder</h2>
+        <p>Als Auflistung:<br/>
+        <ul style="margin:0; padding:0;">
+            <li>direkter Verweis: <a href="img/uni_trier.JPG">Bild</a></li>
+            <li>Bild einbinden: <img src="img/uni_trier.JPG" alt="Universität Trier" width="174" height="40"></li>
+            <li>Interner Verweis via ID (#): <a href="#Uni Trier">Zum Bild am Anfang des Dokuments</a></li>
+            <li>Bild mit Link: <a href="http://www.uni-trier.de"><img src="img/uni_trier.JPG" alt="Bild mit Link" /></a></li>
+            <li>Bild mit Usemap-Links: <img src="img/uni_trier.JPG" alt="Bild mit Link" width="174" height="40"
+                                        usemap="#linksrechts"/>
+            <map name="linksrechts">
+                <area shape="rect" coords="0,0,87,40" href="http://www.uni-trier.de" alt="links"/>
+                <area shape="rect" coords="87,0,174,40" href="http://www.google.de" alt="rechts"/>
+
+                <!--
+                coords="x1,y1,x2,y2"
+                coords="von links, von oben, von links, von oben"
+                -->
+                <!--
+                Dies ist auch möglich. Aber es ist unsicher, ob es bei eingebetteten Maps
+                <area shape="rect" coords="0,0,174,79" href="http://www.uni-trier.de" alt="links"/>
+                <area shape="rect" coords="174,0,348,79" href="http://www.google.de" alt="rechts"/>
+                -->
+            </map></li>
+            </ul>
+        </p>
+    </div>
+    </section>
+    <section>
+    <div id="Übung_4"><h2>Übung 4 - Verweise auf Abschnitte in anderen Dokumenten</h2>
+        <p><a href="2nd_page.html#Verweis" target="_blank">Verweis auf einen Abschnitt im 2. Dokument</a>
+        </p>
+    </div>
+    </section>
+        <section>
+    <div id="Übung_5"><h2>Übung 5 - Simple Formulare</h2>
+        <form action="form_get.html" id="uberforderung" method="get" target="_blank">
+            <p>
+                Vorname:<br/>
+                <input type="text" name="vorname"><br/>
+                Nachname:<br/>
+                <input type="text" name="nachname"><br/>
+            </p>
+
+            <p>
+                Überfordert?<br/>
+                <input type="radio" name="uberfordert_radio" value="ja"> Ja
+                <input type="radio" name="uberfordert_radio" value="nein"> Nein
+            </p>
+
+            <p>
+                <label>Wie sehr gefordert?</label><br/>
+                <select name="uberfordert_auswahl" size="4">
+                    <option>Gar nicht</option>
+                    <option>Etwas</option>
+                    <option selected>Sehr</option>
+                    <option>Überfordert</option>
+                </select>
+            </p>
+
+            <input type="submit" value="Senden">
+            <input type="reset" value="Löschen">
+        </form>
+    </div>
+        </section>
+        <section class="footer">
+            <div>
+                <p>Webseite von Paul Wofl 1505312</p>
+            </div>
+            <div>
+                <a href="#Übung_1">Ü1</a>
+                <a href="#Übung_2">Ü2</a>
+                <a href="#Übung_3">Ü3</a>
+                <a href="#Übung_4">Ü4</a>
+                <a href="#Übung_5">Ü5</a>
+            </div>
+
+        </section>
+    </div>
+
+
+</div>
+</body>
+</html>

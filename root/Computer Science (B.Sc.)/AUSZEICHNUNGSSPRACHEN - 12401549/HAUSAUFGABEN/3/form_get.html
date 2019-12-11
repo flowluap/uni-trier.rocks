@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 1 - GET Request</title>
+</head>
+<body>
+    <p>
+        <script type="text/javascript">
+            var url_string_get = window.location.href
+            var url_get = new URL(url_string_get);
+            var vorname = url_get.searchParams.get("vorname");
+            var nachname = url_get.searchParams.get("nachname");
+            var uberfordert_radio = url_get.searchParams.get("uberfordert_radio");
+            var uberfordert_auswahl = url_get.searchParams.get("uberfordert_auswahl");
+
+            document.write("Vorname: " + vorname + "<br>");
+            document.write("Nachname: " + nachname + "<br>");
+            document.write("Überfordert: " + uberfordert_radio + "<br>");
+            document.write("Wie sehr gefordert: " + uberfordert_auswahl + "<br>");
+        </script>
+    </p>
+</body>
+</html>

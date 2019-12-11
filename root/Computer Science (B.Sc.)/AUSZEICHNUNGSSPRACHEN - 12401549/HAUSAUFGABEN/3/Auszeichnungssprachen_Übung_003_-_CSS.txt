@@ -1,0 +1,53 @@
+
+5) Kopfbereich:
+	-Es handelt sich hier nicht um das <header>-Element aus HTML,
+	auch wenn die 2 benötigten div-Klassen "display_header" und "display_header_shadow" genannt werden sollen.
+	-Diese Klassen sollen mit den verschiedenen Möglichkeiten der Positionierung angeordnet werden, sodass ein „Schatteneffekt“ entsteht.
+	-Die Positionierung wird auf den Folien ab Seite 37 erklärt. Denken Sie daran, dass auch negative Werte genutzt werden können.
+	-Wichtig ist, wie Sie die <div>-Elemente verschachteln und welches der beiden Elemente dem anderen übergeordnet wird.
+	-“Auszeichnungssprachen“ ist h1, „Übung 2…“ h2
+	-Um das Bild vernünftig einzubetten muss die Klasse „display_header“ um das <img>-Element und float erweitert werden. Dazu soll NICHT die Klasse „display_header“ umgeschrieben werden, sondern eine weitere Klassendefinition separat erstellt werden. Nutzen Sie dazu Ihre „display_header“-Klasse und img{}.
+	-Als Beispiel diene: https://www.w3schools.com/code/tryit.asp?filename=G0DK6XPAF9XU
+
+
+6) Alle Abschnitte (nicht Paragraphen, da bspw. die Überschriften ebenfalls enthalten sind) zu den Übungen sollen:
+	-einen weißen Hintergrund haben
+	-einen Rand haben
+	-Innen- und Außenabstände haben, sodass  sowohl das Rechteck als auch der Text leicht eingerückt aussehen
+	-Einen Abstand zu den anderen Abschnitten haben
+
+
+7) Hintergrundbilder und Overflow (Teil zu „Übung 4 - Verweise auf Abschnitte in anderen Dokumenten“):
+	-Enthält die gleichen Formatierungen, wie die anderen Abschnitte (Multiple Classes)
+	-Ein DOM-Element kann mehrere Klassen haben, also 'class="Klasse1 Klasse2 Klasse3"', wobei in Konflikt stehende Elemente von den nachfolgenden Klassen überschrieben werden.
+	-Enthält ein Hintergrundbild (aus "img"background.png")
+	-Das Bild soll sich nur vertikal wiederholen
+	-Das gesamte Element soll maximal 200 Pixel hoch sein, bitte stellen Sie dies ein und geben  an, dass der Overflow mit Scrollbalken behandelt werden soll.
+	-Füllen Sie den Paragraphen mit Text, sodass ein Overflow entsteht.
+	
+
+
+8) Formulare
+	-Die Formularelemente würden mit den bisherigen Formatierungen recht unansehnlich aussehen. Verschönern Sie die Elemente, insbesondere durch die gescheite Wahl von HTML-Elementen und CSS-Elementen zu Positionierung und Abständen.
+
+
+9) Inhaltsverzeichnis:
+	-Interne Links auf der Seite als "Inhaltsverzeichnis"
+	-Erstellen Sie dazu die Klassen "div.olmenu" und die Klasse "ol.menu" in der CSS-Datei, und in der HTML-Datei ein <div> mit eingebetteter <ol>, denen die entsprechenden Klassen zugewiesen werden.
+	-Die Links sollen den ersten Buchstaben jedes Wortes als Großbuchstaben darstellen (text-transform: capitalize)
+	-Bitte beachten Sie, dass „Zum Anfang“ Teil der Liste ist, jedoch nicht nummeriert ist. Dies lässt sich mit einem CSS-Eintrag erreichen.
+	-Die Positionierung wird auf den Folien ab Seite 37 erklärt. Denken Sie daran, dass auch negative Werte genutzt werden können.
+	-Stellen Sie die "margin" in der richtigen Klasse so ein, dass das Inhaltsverzeichnis die linke "Spalte" einnimmt, sodass die restlichen Elemente rechts davon angezeigt werden. Versuchen Sie eine Tabelle zu vermeiden.
+	-Es sollen dazu 2 DIV-Elemente erstellt werden, die jeweils eine andere Hintergrundfarbe erhalten und leicht versetzt voneinander sind. Nur eines dieser Elemente enthält das Verzeichnis.
+		-Diese DIVs müssen ineinander verschachtelt sein.
+	
+	
+10) Footer (der Teil unten dran mit „Tim Rostin“ und Links zu den Aufgabenteilen)
+	-Keine genaue Beschreibung, anhand der vorherigen Aufgaben kann visuell abgeleitet werden, was gemacht werden soll.
+	-Der „Schatten“ soll sich in die andere Richtung, als die des Kopfbereichs, ausdehnen
+
+
+
+Optionales:
+Der Inhalt zu „Übung 3“ befindet sich in einer Liste (ul), bitte schalten Sie die Aufzählung und Einrückung ab.
+Der Paragraph zu „Übung 3“ ist unschön anzusehen, so wie die Bilder eingebettet sind. Probieren Sie verschiedene Wege aus, dies schöner zu gestalten.
